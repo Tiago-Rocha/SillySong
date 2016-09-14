@@ -10,10 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    //@IBOutlet weak var nameField: UITextField!
-    //@IBOutlet weak var lyricsField: UITextView!
     @IBOutlet weak var nameField: UITextField!
-    
     @IBOutlet weak var lyricsField: UITextView!
     
     let bananaFanaTemplate = [
@@ -27,11 +24,6 @@ class ViewController: UIViewController {
         nameField.delegate = self
         nameField.autocapitalizationType = .Words
         nameField.returnKeyType = .Done
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     @IBAction func reset(sender: AnyObject) {
         self.nameField.text = ""
@@ -57,7 +49,7 @@ func shortNameFromName(fullName: String) -> String {
     let lowercaseName = fullName.lowercaseString
     let vowelSet = NSCharacterSet(charactersInString: "aeiou")
     
-    if let firstVowelRange = fullName.rangeOfCharacterFromSet(vowelSet, options: .CaseInsensitiveSearch) {
+    if let firstVowelRange = lowercaseName.rangeOfCharacterFromSet(vowelSet, options: .CaseInsensitiveSearch) {
         return lowercaseName.substringFromIndex(firstVowelRange.startIndex)
     }
     
