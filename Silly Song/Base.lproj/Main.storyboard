@@ -40,7 +40,7 @@
                                     <action selector="reset:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="i0O-28-QNP"/>
                                 </connections>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TAq-JP-aMF">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TAq-JP-aMF">
                                 <rect key="frame" x="70" y="248" width="460" height="80"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
