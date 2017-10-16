@@ -17,22 +17,22 @@ class ViewController: UIViewController {
         "<FULL_NAME>, <FULL_NAME>, Bo B<SHORT_NAME>",
         "Banana Fana Fo F<SHORT_NAME>",
         "Me My Mo M<SHORT_NAME>",
-        "<FULL_NAME>"].joinWithSeparator("\n")
+        "<FULL_NAME>"].joined(separator: "\n")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         nameField.delegate = self
-        nameField.autocapitalizationType = .Words
-        nameField.returnKeyType = .Done
+        nameField.autocapitalizationType = .words
+        nameField.returnKeyType = .done
     }
-    @IBAction func reset(sender: AnyObject) {
+    @IBAction func reset(_ sender: AnyObject) {
         self.nameField.text = ""
         self.lyricsField.text = ""
     }
     
-    @IBAction func displayLyrics(sender: AnyObject) {
+    @IBAction func displayLyrics(_ sender: AnyObject) {
         if !(nameField.text == "") {
-            nameField.text = nameField.text?.capitalizedString
+            nameField.text = nameField.text?.capitalized
             self.lyricsField.text = lyricsForName(bananaFanaTemplate, fullName: nameField.text!)
         }
     }
@@ -40,28 +40,28 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return false
     }
 }
-func shortNameFromName(fullName: String) -> String {
-    let lowercaseName = fullName.lowercaseString
-    let vowelSet = NSCharacterSet(charactersInString: "aeiou")
+func shortNameFromName(_ fullName: String) -> String {
+    let lowercaseName = fullName.lowercased()
+    let vowelSet = CharacterSet(charactersIn: "aeiou")
     
-    if let firstVowelRange = lowercaseName.rangeOfCharacterFromSet(vowelSet, options: .CaseInsensitiveSearch) {
-        return lowercaseName.substringFromIndex(firstVowelRange.startIndex)
+    if let firstVowelRange = lowercaseName.rangeOfCharacter(from: vowelSet, options: .caseInsensitive) {
+        return lowercaseName.substring(from: firstVowelRange.lowerBound)
     }
     
     return lowercaseName
 }
 
-func lyricsForName(lyricsTemplate: String, fullName: String) -> String {
+func lyricsForName(_ lyricsTemplate: String, fullName: String) -> String {
     var finalLyrics = ""
     print(finalLyrics)
     finalLyrics = lyricsTemplate
-        .stringByReplacingOccurrencesOfString("<FULL_NAME>", withString: fullName)
-        .stringByReplacingOccurrencesOfString("<SHORT_NAME>", withString: shortNameFromName(fullName))
+        .replacingOccurrences(of: "<FULL_NAME>", with: fullName)
+        .replacingOccurrences(of: "<SHORT_NAME>", with: shortNameFromName(fullName))
     
     return finalLyrics
 }

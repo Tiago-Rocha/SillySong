@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -15,21 +16,19 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Silly Song" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hEp-oY-2Zo">
-                                <rect key="frame" x="138" y="30" width="323" height="118"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="323" id="Ikt-pF-4rq"/>
                                     <constraint firstAttribute="height" constant="118" id="LHz-5s-4eF"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="60"/>
-                                <color key="textColor" red="0.52196937919462982" green="0.23227768456375839" blue="0.76740771812080533" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.52196937919462982" green="0.23227768456375839" blue="0.76740771812080533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RIQ-Pz-Ka9">
-                                <rect key="frame" x="20" y="154" width="560" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Oqn-y1-gCB"/>
                                 </constraints>
@@ -41,8 +40,7 @@
                                 </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TAq-JP-aMF">
-                                <rect key="frame" x="70" y="248" width="460" height="80"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="Vk1-sT-W8G"/>
                                 </constraints>
@@ -51,9 +49,10 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="RIQ-Pz-Ka9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ALX-4F-0Mk"/>
+                            <constraint firstItem="RIQ-Pz-Ka9" firstAttribute="top" secondItem="hEp-oY-2Zo" secondAttribute="bottom" constant="6" id="GYK-FF-Amm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="TAq-JP-aMF" secondAttribute="trailing" constant="50" id="MIg-66-DVw"/>
                             <constraint firstItem="TAq-JP-aMF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Zkv-DR-gK7"/>
                             <constraint firstItem="hEp-oY-2Zo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="30" id="aVE-D3-a6V"/>
